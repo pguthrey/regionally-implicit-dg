@@ -1,0 +1,13 @@
+function [truncnort,truncsout,residual_cell_nortsout, ...
+           Jac_trunc_nort,Jac_trunc_sout,Jac_cell_nortsout] = problem_exact_integrals_nortsout_M1(q,nuv2,nug) 
+u_1 = q(1);
+truncnort(1,1) = 0;
+truncnort(1) = nuv2*(4.0*nug*u_1);
+truncsout(1,1) = 0;
+truncsout(1) = nuv2*(-4.0*nug*u_1);
+residual_cell_nortsout(1,1) = 0;
+Jac_trunc_nort(1,1) = 0;
+Jac_trunc_nort(1,1) = nuv2*(4.0*nug);
+Jac_trunc_sout(1,1) = 0;
+Jac_trunc_sout(1,1) = nuv2*(-4.0*nug);
+Jac_cell_nortsout(1,1) = 0;
